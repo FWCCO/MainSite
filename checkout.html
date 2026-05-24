@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lodge & Conciliate — Checkout | Fair Work Claim Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0d0d0d; --ink2: #1c1c1c; --red: #c0392b; --red-light: #e74c3c;
+    --paper: #f5f2ed; --paper2: #ede9e2; --muted: #6b6560;
+    --white: #ffffff; --border: rgba(0,0,0,0.1); --green: #1a6b3a;
+  }
+  body { font-family: 'Barlow', sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; }
+
+  nav {
+    background: var(--ink); border-bottom: 2px solid var(--red);
+    padding: 16px 48px; display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: white; letter-spacing: 2px; text-decoration: none; }
+  .nav-logo span { color: var(--red-light); }
+  .nav-back { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; font-weight: 500; }
+  .nav-back:hover { color: white; }
+  .nav-secure { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.4); }
+
+  .checkout-wrap {
+    max-width: 980px; margin: 0 auto;
+    padding: 48px 24px 80px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* LEFT — summary & next steps */
+  .checkout-summary { display: flex; flex-direction: column; gap: 24px; }
+
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: 44px; letter-spacing: 1px; line-height: 1; color: var(--ink); margin-bottom: 16px; }
+
+  .package-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+  }
+  .package-header {
+    background: var(--ink); padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .package-name { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: white; letter-spacing: 1px; }
+  .package-badge { background: var(--red); color: white; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
+  .package-features { padding: 20px 24px; }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: #333;
+  }
+  .feature-item:last-child { border-bottom: none; }
+  .feature-check { color: var(--red); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .next-steps-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 24px;
+  }
+  .next-steps-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; color: var(--ink); margin-bottom: 16px; }
+  .step-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+  .step-row:last-child { margin-bottom: 0; }
+  .step-circle {
+    width: 32px; height: 32px; border-radius: 50%; background: var(--red);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: white; flex-shrink: 0;
+  }
+  .step-row h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .step-row p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  .guarantee-box {
+    background: #f0faf4; border: 1px solid rgba(26,107,58,0.2);
+    border-radius: 6px; padding: 18px 20px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .guarantee-icon { font-size: 22px; flex-shrink: 0; }
+  .guarantee-box p { font-size: 14px; color: #2d6a4f; line-height: 1.55; }
+
+  /* RIGHT — payment form */
+  .checkout-payment {
+    background: var(--white); border: 1px solid var(--border); border-radius: 6px;
+    overflow: hidden; position: sticky; top: 80px;
+  }
+  .payment-header { background: var(--ink2); padding: 20px 24px; }
+  .payment-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: white; letter-spacing: 1px; margin-bottom: 4px; }
+  .payment-header p { font-size: 13px; color: rgba(255,255,255,0.5); }
+
+  .price-display { padding: 20px 24px; border-bottom: 1px solid var(--border); background: #fafaf9; }
+  .price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 15px; color: #555; }
+  .price-row:last-child { margin-bottom: 0; }
+  .price-row.total { font-size: 20px; font-weight: 700; color: var(--ink); border-top: 1px solid var(--border); padding-top: 10px; margin-top: 6px; }
+  .price-row .strikethrough { text-decoration: line-through; color: #aaa; font-size: 13px; }
+  .discount-applied { display: none; background: rgba(26,107,58,0.08); border: 1px solid rgba(26,107,58,0.2); border-radius: 3px; padding: 6px 10px; font-size: 12px; color: #2d6a4f; font-weight: 600; }
+
+  .addon-section { padding: 16px 24px; border-bottom: 1px solid var(--border); }
+  .addon-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: rgba(192,57,43,0.04); border: 1px solid rgba(192,57,43,0.15);
+    border-radius: 4px; padding: 14px;
+  }
+  .addon-row input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; width: 17px; height: 17px; accent-color: var(--red); cursor: pointer; }
+  .addon-label { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .addon-badge { background: var(--red); color: white; font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 700; }
+  .addon-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  .payment-form { padding: 20px 24px; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 5px; }
+  .form-group input, .form-group select {
+    width: 100%; padding: 11px 14px; border: 1px solid rgba(0,0,0,0.15); border-radius: 3px;
+    font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--ink); background: white;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus { border-color: var(--red); }
+  .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .code-row { display: flex; gap: 8px; }
+  .code-row input { flex: 1; }
+  .code-btn {
+    background: var(--ink); color: white; border: none; padding: 11px 16px;
+    border-radius: 3px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap;
+    font-family: 'Barlow', sans-serif; transition: background 0.2s;
+  }
+  .code-btn:hover { background: #333; }
+  .code-msg { font-size: 12px; margin-top: 5px; }
+
+  .stripe-placeholder {
+    background: #f9f9f9; border: 1px solid rgba(0,0,0,0.12); border-radius: 3px;
+    padding: 14px; margin-bottom: 14px; text-align: center;
+    color: var(--muted); font-size: 14px;
+  }
+  .stripe-placeholder strong { display: block; color: var(--ink); margin-bottom: 4px; }
+
+  .pay-btn {
+    width: 100%; background: var(--red); color: white; border: none; padding: 16px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px;
+    border-radius: 3px; cursor: pointer; transition: background 0.2s;
+  }
+  .pay-btn:hover { background: var(--red-light); }
+
+  .payment-trust { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+  .trust-item-small { font-size: 12px; color: #aaa; display: flex; align-items: center; gap: 4px; }
+
+  footer {
+    background: var(--ink); padding: 24px 48px; text-align: center;
+    font-size: 13px; color: rgba(255,255,255,0.3);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; }
+    .nav-secure { display: none; }
+    .checkout-wrap { grid-template-columns: 1fr; padding: 24px 20px 60px; gap: 24px; }
+    .checkout-payment { position: static; }
+    h1 { font-size: 34px; }
+    .form-row-2 { grid-template-columns: 1fr; }
+    footer { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Fair Work Claim <span>Co.</span></a>
+  <div class="nav-secure">🔒 Secure Checkout</div>
+  <a href="index.html" class="nav-back">← Back</a>
+</nav>
+
+<div class="checkout-wrap">
+
+  <!-- LEFT: Summary -->
+  <div class="checkout-summary">
+    <div>
+      <p class="eyebrow">Checkout</p>
+      <h1>Lodge & Conciliate</h1>
+    </div>
+
+    <div class="package-card">
+      <div class="package-header">
+        <div class="package-name">What's Included</div>
+        <div class="package-badge">Most Popular</div>
+      </div>
+      <div class="package-features">
+        <div class="feature-item"><span class="feature-check">✓</span> Application drafted in full by our team</div>
+        <div class="feature-item"><span class="feature-check">✓</span> Lodged with the Fair Work Commission before your deadline</div>
+        <div class="feature-item"><span class="feature-check">✓</span> All paperwork handled — you don't write a word</div>
+        <div class="feature-item"><span class="feature-check">✓</span> Full representation at conciliation conference</div>
+        <div class="feature-item"><span class="feature-check">✓</span> Settlement negotiation on your behalf</div>
+        <div class="feature-item"><span class="feature-check">✓</span> Unlimited email support throughout</div>
+        <div class="feature-item"><span class="feature-check">✓</span> Commission filing fee guidance ($79.80 payable to FWC)</div>
+      </div>
+    </div>
+
+    <div class="next-steps-card">
+      <h3>What Happens After You Pay</h3>
+      <div class="step-row">
+        <div class="step-circle">1</div>
+        <div>
+          <h4>We contact you within 2 hours</h4>
+          <p>A senior consultant will call or email you to introduce themselves and confirm your details.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">2</div>
+        <div>
+          <h4>You tell us what happened</h4>
+          <p>A 20–30 minute call where we gather the facts. We do the hard work from here — you just answer our questions.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">3</div>
+        <div>
+          <h4>We draft and lodge your application</h4>
+          <p>We prepare your Fair Work Commission application and lodge it on your behalf — usually within 1 business day of your briefing call.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">4</div>
+        <div>
+          <h4>We represent you at conciliation</h4>
+          <p>The Commission schedules a conciliation conference. We prepare you, attend with you, and negotiate hard for the best possible outcome.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guarantee-box">
+      <div class="guarantee-icon">🛡️</div>
+      <p><strong>Fixed fee guarantee.</strong> The price you see is the price you pay — no hourly billing, no hidden costs, no surprises. If we haven't started work, you can request a full refund within 48 hours.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: Payment -->
+  <div class="checkout-payment">
+    <div class="payment-header">
+      <h2>Order Summary</h2>
+      <p>Secure payment powered by Stripe</p>
+    </div>
+
+    <div class="price-display">
+      <div class="price-row">
+        <span>Lodge & Conciliate</span>
+        <span id="base-price-display">$1,990</span>
+      </div>
+      <div class="price-row" id="discount-row" style="display:none;">
+        <span style="color:#2d6a4f;font-weight:600;">Discount (CLAIM50)</span>
+        <span style="color:#2d6a4f;font-weight:600;">−$995</span>
+      </div>
+      <div class="price-row" id="addon-row" style="display:none;">
+        <span>Same-Day Lodgement</span>
+        <span>+$200</span>
+      </div>
+      <div class="price-row total">
+        <span>Total (incl. GST)</span>
+        <span id="total-display">$1,990</span>
+      </div>
+      <div class="discount-applied" id="discount-badge">✓ Discount code CLAIM50 applied</div>
+    </div>
+
+    <!-- Same-day add-on -->
+    <div class="addon-section">
+      <div class="addon-row">
+        <input type="checkbox" id="checkout-sameday" onchange="updateTotal()">
+        <div>
+          <div class="addon-label">
+            Same-Day Lodgement
+            <span class="addon-badge">+$200</span>
+          </div>
+          <div class="addon-desc">Claim lodged with the Fair Work Commission today. Must complete checkout before 2:00 PM AEST. We'll call you within the hour.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-form">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" id="co-first" placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" id="co-last" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" id="co-email" placeholder="jane@example.com">
+      </div>
+      <div class="form-group">
+        <label>Phone *</label>
+        <input type="tel" id="co-phone" placeholder="04XX XXX XXX">
+      </div>
+      <div class="form-group">
+        <label>Matter Type *</label>
+        <select id="co-matter">
+          <option value="">Select your situation</option>
+          <option value="unfair-dismissal">Unfair Dismissal</option>
+          <option value="general-protections">General Protections</option>
+          <option value="bullying">Workplace Bullying / Harassment</option>
+          <option value="other">Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Discount Code</label>
+        <div class="code-row">
+          <input type="text" id="co-code" placeholder="Enter code" style="text-transform:uppercase;">
+          <button class="code-btn" onclick="applyCode()">Apply</button>
+        </div>
+        <div class="code-msg" id="code-msg"></div>
+      </div>
+
+      <div class="stripe-placeholder">
+        <strong>Card Payment</strong>
+        Stripe payment integration connects here.<br>
+        <span style="font-size:11px;">Your payment is encrypted and secure.</span>
+      </div>
+
+      <button class="pay-btn" onclick="processPayment()">
+        Pay <span id="pay-btn-amount">$1,990</span> →
+      </button>
+
+      <div class="payment-trust">
+        <span class="trust-item-small">🔒 SSL Encrypted</span>
+        <span class="trust-item-small">✓ Stripe Secured</span>
+        <span class="trust-item-small">✓ GST Invoice Provided</span>
+        <span class="trust-item-small">✓ 48hr Refund Policy</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Fair Work Claim Co. Pty Ltd · <a href="privacy.html" style="color:rgba(255,255,255,0.35);">Privacy Policy</a> · <a href="terms.html" style="color:rgba(255,255,255,0.35);">Terms of Service</a>
+</footer>
+
+<script>
+var basePrice = 1990;
+var discountActive = false;
+var addonActive = false;
+
+function updateTotal() {
+  addonActive = document.getElementById('checkout-sameday').checked;
+  var addonRow = document.getElementById('addon-row');
+  addonRow.style.display = addonActive ? 'flex' : 'none';
+  recalc();
+}
+
+function recalc() {
+  var price = discountActive ? 995 : 1990;
+  if (addonActive) price += 200;
+  document.getElementById('total-display').textContent = '$' + price.toLocaleString();
+  document.getElementById('pay-btn-amount').textContent = '$' + price.toLocaleString();
+}
+
+function applyCode() {
+  var code = document.getElementById('co-code').value.trim().toUpperCase();
+  var msg = document.getElementById('code-msg');
+  if (code === 'CLAIM50') {
+    discountActive = true;
+    document.getElementById('base-price-display').innerHTML = '<span class="strikethrough">$1,990</span> $995';
+    document.getElementById('discount-row').style.display = 'flex';
+    document.getElementById('discount-badge').style.display = 'block';
+    msg.style.color = '#2d6a4f';
+    msg.textContent = '✓ 50% discount applied — saving $995';
+    recalc();
+  } else {
+    msg.style.color = '#c0392b';
+    msg.textContent = 'Invalid code. Sign up on our website to receive your code.';
+  }
+}
+
+function processPayment() {
+  var first = document.getElementById('co-first').value.trim();
+  var last = document.getElementById('co-last').value.trim();
+  var email = document.getElementById('co-email').value.trim();
+  var phone = document.getElementById('co-phone').value.trim();
+  var matter = document.getElementById('co-matter').value;
+  if (!first || !last || !email || !phone || !matter) {
+    alert('Please fill in all required fields before proceeding.');
+    return;
+  }
+  if (!email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  // TODO: Integrate Stripe Checkout here
+  alert('Payment processing will be enabled once Stripe is connected. Your details have been noted — we will be in touch within 2 hours.');
+}
+
+// On load — check for discount code in URL params or session storage
+window.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  var sessionCode = sessionStorage.getItem('codeClaimed');
+  var localCode = localStorage.getItem('fwc_discount');
+  // Auto-apply discount if code exists from any source
+  if (params.get('discount') === 'CLAIM50' || sessionCode || localCode === 'CLAIM50') {
+    document.getElementById('co-code').value = 'CLAIM50';
+    applyCode();
+  }
+  // Check for same-day pre-selected from pricing page
+  if (sessionStorage.getItem('addSameDay')) {
+    document.getElementById('checkout-sameday').checked = true;
+    updateTotal();
+    sessionStorage.removeItem('addSameDay');
+  }
+});
+</script>
+</body>
+</html>
