@@ -46,7 +46,7 @@
       "description": "Fair Work Claim Co. provides expert Fair Work Commission representation for employees across Australia. Experienced HR professionals specialising in unfair dismissal, general protections, workplace bullying and mediation.",
       "url": "https://www.fairworkclaim.com.au",
       "telephone": "+61292000000",
-      "email": "hello@fairworkclaim.com.au",
+      "email": "contact@fairworkclaim.com.au",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Sydney",
@@ -1212,7 +1212,7 @@
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#how">How It Works</a></li>
-    <li><a href="javascript:void(0)" onclick="smoothTo('pricing');">Pricing</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="javascript:void(0)" class="nav-cta" onclick="smoothTo('enquiry-form');">Book a Call</a></li>
@@ -1295,7 +1295,7 @@
   <p class="section-eyebrow">Transparent Fixed Fees</p>
   <h2 class="section-title">Know exactly what<br>you'll pay. Always.</h2>
   <p class="section-lead">No hourly billing surprises. No retainers. Pay a flat fee and get full representation at that stage.</p>
-  <div class="pricing-grid" id="pricing-grid" style="scroll-margin-top:118px;">
+  <div class="pricing-grid" id="pricing-grid" style="scroll-margin-top:82px;">
 
     <div class="pricing-card">
       <div class="pricing-header">
@@ -1318,8 +1318,8 @@
     </div>
 
     <div class="pricing-card featured">
-      <div class="featured-badge">Most Popular</div>
-      <div class="pricing-header" id="pricing" style="scroll-margin-top:58px;">
+      <div class="featured-badge" id="pricing" style="scroll-margin-top:78px;">Most Popular</div>
+      <div class="pricing-header">
         <div class="pricing-tier">Lodge & Conciliate</div>
         <p class="pricing-desc">Full lodgement of your application and complete representation through the conciliation stage — where most matters resolve.</p>
       </div>
@@ -1699,7 +1699,7 @@
       <p>Tell us what's happened and we'll get back to you within one business day with an honest assessment of your situation — no obligation, no cost.</p>
       <div class="cta-contacts">
         <div class="cta-contact-item"><span class="cta-dot"></span>Phone: <a href="tel:0292000000">(02) 9200 0000</a></div>
-        <div class="cta-contact-item"><span class="cta-dot"></span>Email: <a href="mailto:hello@fairworkclaim.com.au">hello@fairworkclaim.com.au</a></div>
+        <div class="cta-contact-item"><span class="cta-dot"></span>Email: <a href="mailto:contact@fairworkclaim.com.au">contact@fairworkclaim.com.au</a></div>
         <div class="cta-contact-item"><span class="cta-dot"></span>Mon–Fri · 8am–6pm AEST</div>
         <div class="cta-contact-item"><span class="cta-dot"></span>Response within 1 business day</div>
       </div>
@@ -1928,7 +1928,7 @@ function smoothTo(id) {
   var targetId = (id === 'pricing' && window.innerWidth > 768) ? 'pricing-grid' : id;
   var el = document.getElementById(targetId) || document.getElementById(id);
   if (!el) return;
-  var margin = (window.innerWidth <= 768 && id === 'pricing') ? 95 : (parseInt(el.style.scrollMarginTop) || 58);
+  var margin = parseInt(el.style.scrollMarginTop) || 58;
   var top = 0;
   var node = el;
   while (node) { top += node.offsetTop; node = node.offsetParent; }
