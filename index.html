@@ -2012,7 +2012,6 @@ function submitPopup() {
   if (!name || !email || !email.includes('@')) {
     alert('Please enter your name and a valid email address.');
     return;
-  }
  fetch('https://a.klaviyo.com/client/subscriptions/?company_id=UXdrur', {
     method: 'POST',
     headers: {'content-type': 'application/json', 'revision': '2024-10-15'},
@@ -2020,8 +2019,17 @@ function submitPopup() {
       data: {
         type: 'subscription',
         attributes: {
-          profile: { data: { type: 'profile', attributes: { email: email, first_name: name } } },
-          list_id: 'S8YdDg'
+          list_id: 'S8YdDg',
+          custom_source: 'Website Popup',
+          profile: {
+            data: {
+              type: 'profile',
+              attributes: {
+                email: email,
+                first_name: name
+              }
+            }
+          }
         }
       }
     })
