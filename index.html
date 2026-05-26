@@ -45,7 +45,7 @@
       "name": "Fair Work Claim Co.",
       "description": "Fair Work Claim Co. provides expert Fair Work Commission representation for employees across Australia. Experienced HR professionals specialising in unfair dismissal, general protections, workplace bullying and mediation.",
       "url": "https://www.fairworkclaim.com.au",
-      "telephone": "+61292000000",
+      "telephone": "+61494758103",
       "email": "contact@fairworkclaim.com.au",
       "address": {
         "@type": "PostalAddress",
@@ -459,12 +459,13 @@
   .trust-pill {
     background: rgba(192,57,43,0.15);
     border: 1px solid rgba(192,57,43,0.3);
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
     font-size: 13px;
-    font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 20px;
-    white-space: nowrap;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 3px;
+    text-align: center;
+    letter-spacing: 0.3px;
   }
 
   /* SECTIONS */
@@ -1103,7 +1104,7 @@
     nav { padding: 12px 20px; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .nav-logo { font-size: 20px; }
+    .nav-logo { font-size: 24px; }
 
     /* HERO — tighter top padding, content visible above fold */
     .hero {
@@ -1112,11 +1113,15 @@
       justify-content: flex-start;
     }
     .hero-eyebrow { font-size: 10px; letter-spacing: 2px; margin-bottom: 12px; }
-    .hero h1 { font-size: clamp(44px, 12vw, 72px); margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(72px, 18vw, 100px); margin-bottom: 16px; }
     .hero-sub { font-size: 15px; margin-bottom: 24px; }
     .hero-actions { gap: 10px; }
     .btn-primary, .btn-ghost { padding: 13px 22px; font-size: 14px; }
-    .hero-stats { margin-top: 32px; padding-top: 24px; gap: 20px; }
+    .hero-stats { margin-top: 32px; padding-top: 24px; flex-direction: row; gap: 0; }
+    .hero-stats > div { padding: 0 16px; border-right: 1px solid rgba(255,255,255,0.15); border-bottom: none; }
+    .hero-stats > div:first-child { padding-left: 0; }
+    .hero-stats > div:last-child { border-right: none; }
+    .stat-num { font-size: 34px; }
     .stat-num { font-size: 34px; }
     .stat-label { font-size: 10px; }
 
@@ -1202,7 +1207,8 @@
     #side-tab div { padding: 10px 8px; }
   }
 </style>
-<script type="text/javascript">     (function(c,l,a,r,i,t,y){         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);     })(window, document, "clarity", "script", "ww1a2savpp"); </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>emailjs.init('HaKjB2gUo9b-kW-Cc');</script>
 </head>
 <body>
 <a href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to main content</a>
@@ -1213,7 +1219,7 @@
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#how">How It Works</a></li>
-    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="javascript:void(0)" onclick="smoothTo('pricing');">Pricing</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="javascript:void(0)" class="nav-cta" onclick="smoothTo('enquiry-form');">Book a Call</a></li>
@@ -1237,9 +1243,9 @@
 <!-- HERO -->
 <main id="main-content">
 <section class="hero">
-  <p class="hero-eyebrow">Fair Work Commission Representation — Sydney &amp; Nationwide</p>
+  <p class="hero-eyebrow">Fair Work Commission Representation<br>Sydney &amp; Nationwide</p>
   <h1>Your claim.<em>Our fight.</em></h1>
-  <p class="hero-sub">Employees across Sydney and Australia use Fair Work Claim Co. to fight back in the Fair Work Commission — without the legal firm price tag.</p>
+  <p class="hero-sub">Employees across Australia use Fair Work Claim Co. to fight back in the Fair Work Commission — without the heavy price tag.</p>
   <div class="hero-actions">
     <button class="btn-primary" onclick="smoothTo('pricing');">See Pricing &amp; Get Started</button>
     <button class="btn-ghost" onclick="smoothTo('how');">How it works</button>
@@ -1247,25 +1253,24 @@
   <div class="hero-stats">
     <div>
       <span class="stat-num">21</span>
-      <span class="stat-label">Day deadline for most claims</span>
+      <span class="stat-label">Day deadline<br>for most claims</span>
     </div>
     <div>
       <span class="stat-num">$0</span>
-      <span class="stat-label">Upfront consultation</span>
+      <span class="stat-label">Upfront<br>consultation</span>
     </div>
     <div>
       <span class="stat-num">100%</span>
-      <span class="stat-label">Fixed flat fees — no surprise bills</span>
+      <span class="stat-label">Fixed flat fees<br>no surprise bills</span>
     </div>
   </div>
 </section>
 
 <!-- DEADLINE BANNER — moved above trust bar for impact -->
 <div class="deadline">
-  <div class="deadline-icon">⚠️</div>
   <div class="deadline-text">
     <h3>Warning: Strict Time Limits Apply</h3>
-    <p>Unfair dismissal claims must be lodged within <strong>21 days</strong> of being sacked. Miss the deadline and you lose your right to claim — forever.</p>
+    <p>Unfair dismissal claims must be lodged within <strong>21 days</strong> of being terminated. Miss the deadline and you lose your right to claim — forever.</p>
   </div>
   <a href="#contact" class="btn-deadline" onclick="event.preventDefault(); smoothTo('enquiry-form');">Act Now — Free Consult</a>
 </div>
@@ -1282,13 +1287,15 @@
 
 <!-- TRUST PILLS — mobile only -->
 <div class="trust-pills" id="trust-pills">
-  <span style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);width:100%;margin-bottom:4px;">We handle</span>
-  <span class="trust-pill">Unfair Dismissal</span>
-  <span class="trust-pill">General Protections</span>
-  <span class="trust-pill">Workplace Bullying</span>
-  <span class="trust-pill">Mediation</span>
-  <span class="trust-pill">Conciliations</span>
-  <span class="trust-pill">Hearings</span>
+  <span style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);width:100%;margin-bottom:10px;">We Handle</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;">
+    <span class="trust-pill">Unfair Dismissal</span>
+    <span class="trust-pill">General Protections</span>
+    <span class="trust-pill">Workplace Bullying</span>
+    <span class="trust-pill">Mediation</span>
+    <span class="trust-pill">Conciliations</span>
+    <span class="trust-pill">Hearings</span>
+  </div>
 </div>
 
 <!-- PRICING -->
@@ -1296,7 +1303,7 @@
   <p class="section-eyebrow">Transparent Fixed Fees</p>
   <h2 class="section-title">Know exactly what<br>you'll pay. Always.</h2>
   <p class="section-lead">No hourly billing surprises. No retainers. Pay a flat fee and get full representation at that stage.</p>
-  <div class="pricing-grid" id="pricing-grid" style="scroll-margin-top:82px;">
+  <div class="pricing-grid" id="pricing-grid" style="scroll-margin-top:118px;">
 
     <div class="pricing-card">
       <div class="pricing-header">
@@ -1319,8 +1326,8 @@
     </div>
 
     <div class="pricing-card featured">
-      <div class="featured-badge" id="pricing" style="scroll-margin-top:78px;">Most Popular</div>
-      <div class="pricing-header">
+      <div class="featured-badge">Most Popular</div>
+      <div class="pricing-header" id="pricing" style="scroll-margin-top:58px;">
         <div class="pricing-tier">Lodge & Conciliate</div>
         <p class="pricing-desc">Full lodgement of your application and complete representation through the conciliation stage — where most matters resolve.</p>
       </div>
@@ -1699,7 +1706,7 @@
       <h2>Stop waiting.<br><em>Start fighting.</em></h2>
       <p>Tell us what's happened and we'll get back to you within one business day with an honest assessment of your situation — no obligation, no cost.</p>
       <div class="cta-contacts">
-        <div class="cta-contact-item"><span class="cta-dot"></span>Phone: <a href="tel:0292000000">(02) 9200 0000</a></div>
+        <div class="cta-contact-item"><span class="cta-dot"></span>Phone: <a href="tel:+61494758103">+61 (0) 494 758 103</a></div>
         <div class="cta-contact-item"><span class="cta-dot"></span>Email: <a href="mailto:contact@fairworkclaim.com.au">contact@fairworkclaim.com.au</a></div>
         <div class="cta-contact-item"><span class="cta-dot"></span>Mon–Fri · 8am–6pm AEST</div>
         <div class="cta-contact-item"><span class="cta-dot"></span>Response within 1 business day</div>
@@ -1806,7 +1813,7 @@
       <div class="form-success" id="form-success">
         <div class="form-success-icon">✓</div>
         <h3>Enquiry Received</h3>
-        <p>Thank you — we'll review your situation and be in touch within one business day.<br><br>If your matter is urgent, call us directly on <a href="tel:0292000000" style="color: var(--red-light);">(02) 9200 0000</a>.</p>
+        <p>Thank you — we'll review your situation and be in touch within one business day.<br><br>If your matter is urgent, call us directly on <a href="tel:+61494758103" style="color: var(--red-light);">+61 (0) 494 758 103</a>.</p>
       </div>
     </div>
   </div>
@@ -1842,9 +1849,39 @@ function submitForm() {
     return;
   }
 
-  document.getElementById('form-body').style.display = 'none';
-  var success = document.getElementById('form-success');
-  success.style.display = 'block';
+  var btn = document.querySelector('.btn-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  var bookingSlot = document.getElementById('selected-slot').textContent.replace('Booked:', '').trim() || 'Not selected';
+  var templateParams = {
+    first_name: first,
+    last_name: last,
+    email: email,
+    phone: document.getElementById('f-phone').value.trim() || 'Not provided',
+    matter_type: document.getElementById('f-matter').options[document.getElementById('f-matter').selectedIndex].text,
+    incident_date: document.getElementById('f-date').value || 'Not provided',
+    message: document.getElementById('f-detail').value.trim() || 'Not provided',
+    source: document.getElementById('f-source').options[document.getElementById('f-source').selectedIndex].text || 'Not provided',
+    booking_slot: bookingSlot
+  };
+
+  // Send admin notification
+  emailjs.send('service_r0j55pf', 'template_ua0ni0t', templateParams)
+    .then(function() {
+      // Send customer confirmation
+      return emailjs.send('service_r0j55pf', 'template_n9372c2', templateParams);
+    })
+    .then(function() {
+      document.getElementById('form-body').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    })
+    .catch(function(error) {
+      btn.textContent = 'Submit Free Enquiry →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us directly on +61 (0) 494 758 103.');
+      console.error('EmailJS error:', error);
+    });
 }
 </script>
 
@@ -1870,7 +1907,7 @@ function submitForm() {
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Fair Work Claim <span>Co.</span></div>
-  <p>© 2025 Fair Work Claim Co. Pty Ltd. All rights reserved.<br><span style="color: rgba(255,255,255,0.2);">Sydney, NSW, Australia · ABN: XX XXX XXX XXX</span></p>
+  <p>© 2025 Fair Work Claim Co. Pty Ltd. All rights reserved.<br><span style="color: rgba(255,255,255,0.2);">Sydney, NSW, Australia · ABN: 59 159 292 655</span></p>
   <ul class="footer-links">
     <li><a href="privacy.html">Privacy Policy</a></li>
     <li><a href="terms.html">Terms of Service</a></li>
@@ -1929,7 +1966,7 @@ function smoothTo(id) {
   var targetId = (id === 'pricing' && window.innerWidth > 768) ? 'pricing-grid' : id;
   var el = document.getElementById(targetId) || document.getElementById(id);
   if (!el) return;
-  var margin = parseInt(el.style.scrollMarginTop) || 58;
+  var margin = (window.innerWidth <= 768 && id === 'pricing') ? 106 : (parseInt(el.style.scrollMarginTop) || 58);
   var top = 0;
   var node = el;
   while (node) { top += node.offsetTop; node = node.offsetParent; }
@@ -1975,25 +2012,8 @@ function submitPopup() {
     alert('Please enter your name and a valid email address.');
     return;
   }
-  // Subscribe to Klaviyo list
-  fetch('https://a.klaviyo.com/client/subscriptions/?company_id=UXdrur', {
-    method: 'POST',
-    headers: {'content-type': 'application/json', 'revision': '2023-12-15'},
-    body: JSON.stringify({
-      data: {
-        type: 'subscription',
-        attributes: {
-          profile: {
-            data: {
-              type: 'profile',
-              attributes: { email: email, first_name: name }
-            }
-          },
-          list_id: 'S8YdDg'
-        }
-      }
-    })
-  });
+  // TODO: Replace with Klaviyo list subscribe API call
+  // POST to your Klaviyo list with name + email to trigger discount code flow
   document.getElementById('popup-success').style.display = 'block';
   document.getElementById('popup-name').style.display = 'none';
   document.getElementById('popup-email').style.display = 'none';
