@@ -1966,7 +1966,7 @@ function smoothTo(id) {
   var targetId = (id === 'pricing' && window.innerWidth > 768) ? 'pricing-grid' : id;
   var el = document.getElementById(targetId) || document.getElementById(id);
   if (!el) return;
-  var margin = (window.innerWidth <= 768 && id === 'pricing') ? 106 : (parseInt(el.style.scrollMarginTop) || 58);
+  var margin = (window.innerWidth <= 768 && id === 'pricing') ? 106 : (window.innerWidth <= 768 && (id === 'testimonials' || id === 'about')) ? 20 : (parseInt(el.style.scrollMarginTop) || 58);
   var top = 0;
   var node = el;
   while (node) { top += node.offsetTop; node = node.offsetParent; }
