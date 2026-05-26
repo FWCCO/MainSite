@@ -1215,6 +1215,8 @@
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>emailjs.init('HaKjB2gUo9b-kW-Cc');</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
 <a href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to main content</a>
@@ -1776,7 +1778,7 @@
 
         <div class="form-group">
           <label>Date of Dismissal / Incident</label>
-          <input type="date" id="f-date" style="width:100%;-webkit-appearance:none;appearance:none;">
+          <input type="text" id="f-date" placeholder="DD/MM/YYYY" readonly="readonly">
         </div>
 
         <div class="form-urgency" id="urgency-msg">
@@ -1955,7 +1957,13 @@ function submitForm() {
 </div>
 
 <script>
-// Smooth scroll with nav offset — reliable cross-device version
+// Flatpickr date picker
+flatpickr('#f-date', {
+  dateFormat: 'd/m/Y',
+  minDate: 'today',
+  disableMobile: true
+});
+
 var SCROLL_OFFSETS = {
   'pricing': 0,
   'how': 0,
