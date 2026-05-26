@@ -2013,8 +2013,19 @@ function submitPopup() {
     alert('Please enter your name and a valid email address.');
     return;
   }
-  // TODO: Replace with Klaviyo list subscribe API call
-  // POST to your Klaviyo list with name + email to trigger discount code flow
+ fetch('https://a.klaviyo.com/client/subscriptions/?company_id=UXdrur', {
+    method: 'POST',
+    headers: {'content-type': 'application/json', 'revision': '2023-12-15'},
+    body: JSON.stringify({
+      data: {
+        type: 'subscription',
+        attributes: {
+          profile: { data: { type: 'profile', attributes: { email: email, first_name: name } } },
+          list_id: 'S8YdDg'
+        }
+      }
+    })
+  }).catch(function(e){ console.error('Klaviyo error:', e); });
   document.getElementById('popup-success').style.display = 'block';
   document.getElementById('popup-name').style.display = 'none';
   document.getElementById('popup-email').style.display = 'none';
