@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Confirmed | Fair Work Claim Co.</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0d0d0d; --red: #c0392b; --red-light: #e74c3c;
+    --paper: #f5f2ed; --muted: #6b6560; --white: #ffffff; --border: rgba(0,0,0,0.1);
+    --green: #1a6b3a; --green-light: #4ade80;
+  }
+  body { font-family: 'Barlow', sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; }
+  nav {
+    background: var(--ink); border-bottom: 2px solid var(--red);
+    padding: 16px 48px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: white; letter-spacing: 2px; text-decoration: none; }
+  .nav-logo span { color: var(--red-light); }
+
+  .hero-confirm {
+    background: var(--ink);
+    padding: 64px 48px 56px;
+    text-align: center;
+  }
+  .check-circle {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(26,107,58,0.2);
+    border: 3px solid var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 36px;
+  }
+  .hero-confirm h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 64px);
+    color: white; letter-spacing: 1px; line-height: 1; margin-bottom: 16px;
+  }
+  .hero-confirm h1 em { font-style: normal; color: var(--green-light); }
+  .hero-confirm p { font-size: 18px; color: rgba(255,255,255,0.65); max-width: 540px; margin: 0 auto; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 56px 24px 80px; }
+
+  .next-steps { margin-bottom: 40px; }
+  .next-steps h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px; letter-spacing: 1px; color: var(--ink); margin-bottom: 24px;
+  }
+  .step-card {
+    background: white; border: 1px solid var(--border); border-radius: 6px;
+    padding: 24px 28px; margin-bottom: 12px;
+    display: flex; gap: 20px; align-items: flex-start;
+  }
+  .step-num {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--red); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px;
+    flex-shrink: 0;
+  }
+  .step-card h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .step-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .step-card .time-badge {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    background: rgba(192,57,43,0.08); color: var(--red);
+    padding: 3px 8px; border-radius: 3px; margin-bottom: 6px;
+  }
+
+  .urgent-box {
+    background: rgba(192,57,43,0.06); border: 1px solid rgba(192,57,43,0.2);
+    border-left: 4px solid var(--red); border-radius: 0 6px 6px 0;
+    padding: 20px 24px; margin-bottom: 40px;
+  }
+  .urgent-box h3 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .urgent-box p { font-size: 14px; color: var(--muted); }
+
+  .contact-box {
+    background: var(--ink); border-radius: 6px; padding: 32px 36px;
+    margin-bottom: 40px;
+  }
+  .contact-box h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px; color: white; letter-spacing: 1px; margin-bottom: 20px;
+  }
+  .contact-row { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+  .contact-row:last-child { margin-bottom: 0; }
+  .contact-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+  .contact-row a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 15px; }
+  .contact-row a:hover { color: white; }
+  .contact-row span { font-size: 15px; color: rgba(255,255,255,0.5); }
+
+  .receipt-note {
+    background: white; border: 1px solid var(--border); border-radius: 6px;
+    padding: 20px 24px; text-align: center;
+  }
+  .receipt-note p { font-size: 14px; color: var(--muted); }
+  .receipt-note strong { color: var(--ink); }
+
+  footer {
+    background: var(--ink); padding: 24px 48px; text-align: center;
+    font-size: 13px; color: rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .hero-confirm { padding: 48px 20px 40px; }
+    .container { padding: 40px 20px 60px; }
+    .contact-box { padding: 24px 20px; }
+    footer { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Fair Work Claim <span>Co.</span></a>
+</nav>
+
+<div class="hero-confirm">
+  <div class="check-circle">✓</div>
+  <h1>Payment <em>Confirmed.</em></h1>
+  <p>You're in. Your matter is now with our team. Here's exactly what happens next.</p>
+</div>
+
+<div class="container">
+
+  <div class="next-steps">
+    <h2>What Happens Next</h2>
+
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div>
+        <span class="time-badge">Within 2 hours</span>
+        <h3>A consultant will contact you</h3>
+        <p>A senior consultant from our team will call or email you to introduce themselves, confirm your details, and book your briefing call. Check your inbox — including your spam folder.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div>
+        <span class="time-badge">Briefing call — 20–30 min</span>
+        <h3>You tell us what happened</h3>
+        <p>We'll ask you the key questions about your situation. You don't need to prepare anything — just be ready to tell us your story. We do the rest.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div>
+        <span class="time-badge">Within 1 business day of your briefing</span>
+        <h3>We prepare and lodge your application</h3>
+        <p>We draft your Fair Work Commission application in full and lodge it on your behalf. You'll receive a copy once submitted.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div>
+        <span class="time-badge">Commission schedules this — usually 2–6 weeks</span>
+        <h3>Conciliation conference</h3>
+        <p>We prepare you thoroughly, attend with you, and represent you throughout. Most matters resolve here. We push hard for the best outcome.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="urgent-box">
+    <h3>If your matter is urgent</h3>
+    <p>If you're approaching the 21-day deadline or need to speak with us immediately, call us directly on <a href="tel:+61494758103" style="color:var(--red);font-weight:600;">+61 (0) 494 758 103</a>. We will prioritise your matter.</p>
+  </div>
+
+  <div class="contact-box">
+    <h2>Your Team's Contact Details</h2>
+    <div class="contact-row"><span class="contact-dot"></span><a href="tel:+61494758103">+61 (0) 494 758 103</a></div>
+    <div class="contact-row"><span class="contact-dot"></span><a href="mailto:contact@fairworkclaim.com.au">contact@fairworkclaim.com.au</a></div>
+    <div class="contact-row"><span class="contact-dot"></span><span>Mon–Fri · 8am–6pm AEST</span></div>
+  </div>
+
+  <div class="receipt-note">
+    <p>A <strong>GST receipt</strong> from Stripe will be emailed to you shortly. Keep it for your records. If you have any issues with your payment, contact us directly.</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Fair Work Claim Co. Pty Ltd · <a href="privacy.html" style="color:rgba(255,255,255,0.35);">Privacy Policy</a> · <a href="terms.html" style="color:rgba(255,255,255,0.35);">Terms of Service</a>
+</footer>
+
+</body>
+</html>
