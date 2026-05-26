@@ -973,7 +973,7 @@
   }
   .form-subtitle { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; overflow: hidden; }
   .form-group label {
     font-size: 12px;
     font-weight: 600;
@@ -1005,10 +1005,13 @@
   }
   .form-group select { appearance: none; cursor: pointer; }
   .form-group select option { background: #1c1c1c; color: white; }
-  .form-group input[type="date"] {
+  .form-group input[type="date"],
+  .form-group input[type="text"].flatpickr-input {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     min-height: 46px;
   }
   .form-urgency {
