@@ -2032,8 +2032,17 @@ function submitPopup() {
     alert('Please enter your name and a valid email address.');
     return;
   }
-  // TODO: Replace with Klaviyo list subscribe API call
-  // POST to your Klaviyo list with name + email to trigger discount code flow
+emailjs.send('service_r0j55pf', 'template_ua0ni0t', {
+    first_name: name,
+    email: email,
+    matter_type: 'Discount Code Signup',
+    phone: 'N/A',
+    last_name: '',
+    incident_date: 'N/A',
+    message: 'User signed up for 50% discount code via popup',
+    source: 'Popup',
+    booking_slot: 'N/A'
+  }).catch(function(e){ console.error('EmailJS error:', e); });
   document.getElementById('popup-success').style.display = 'block';
   document.getElementById('popup-name').style.display = 'none';
   document.getElementById('popup-email').style.display = 'none';
