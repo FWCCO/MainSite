@@ -2,8 +2,17 @@
 <html lang="en-AU">
 <head>
 <meta charset="UTF-8">
-...rest of head content...
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Confirmed | Fair Work Claim Co.</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.fairworkclaim.com.au/checkout-complete.html">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ww1a2savpp");
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18189943746"></script>
 <script>
@@ -12,135 +21,84 @@
   gtag('js', new Date());
   gtag('config', 'AW-18189943746');
 </script>
-</head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Confirmed | Fair Work Claim Co.</title>
-<meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #0d0d0d; --red: #c0392b; --red-light: #e74c3c;
-    --paper: #f5f2ed; --muted: #6b6560; --white: #ffffff; --border: rgba(0,0,0,0.1);
-    --green: #1a6b3a; --green-light: #4ade80;
-  }
-  body { font-family: 'Barlow', sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; }
-  nav {
-    background: var(--ink); border-bottom: 2px solid var(--red);
-    padding: 16px 48px; display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: white; letter-spacing: 2px; text-decoration: none; }
-  .nav-logo span { color: var(--red-light); }
-
-  .hero-confirm {
-    background: var(--ink);
-    padding: 64px 48px 56px;
-    text-align: center;
-  }
-  .check-circle {
-    width: 80px; height: 80px; border-radius: 50%;
-    background: rgba(26,107,58,0.2);
-    border: 3px solid var(--green-light);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 24px;
-    font-size: 36px;
-  }
-  .hero-confirm h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 6vw, 64px);
-    color: white; letter-spacing: 1px; line-height: 1; margin-bottom: 16px;
-  }
-  .hero-confirm h1 em { font-style: normal; color: var(--green-light); }
-  .hero-confirm p { font-size: 18px; color: rgba(255,255,255,0.65); max-width: 540px; margin: 0 auto; }
-
-  .container { max-width: 780px; margin: 0 auto; padding: 56px 24px 80px; }
-
-  .next-steps { margin-bottom: 40px; }
-  .next-steps h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px; letter-spacing: 1px; color: var(--ink); margin-bottom: 24px;
-  }
-  .step-card {
-    background: white; border: 1px solid var(--border); border-radius: 6px;
-    padding: 24px 28px; margin-bottom: 12px;
-    display: flex; gap: 20px; align-items: flex-start;
-  }
-  .step-num {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: var(--red); color: white;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Bebas Neue', sans-serif; font-size: 20px;
-    flex-shrink: 0;
-  }
-  .step-card h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-  .step-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-  .step-card .time-badge {
-    display: inline-block; font-size: 11px; font-weight: 700;
-    letter-spacing: 1px; text-transform: uppercase;
-    background: rgba(192,57,43,0.08); color: var(--red);
-    padding: 3px 8px; border-radius: 3px; margin-bottom: 6px;
-  }
-
-  .urgent-box {
-    background: rgba(192,57,43,0.06); border: 1px solid rgba(192,57,43,0.2);
-    border-left: 4px solid var(--red); border-radius: 0 6px 6px 0;
-    padding: 20px 24px; margin-bottom: 40px;
-  }
-  .urgent-box h3 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
-  .urgent-box p { font-size: 14px; color: var(--muted); }
-
-  .contact-box {
-    background: var(--ink); border-radius: 6px; padding: 32px 36px;
-    margin-bottom: 40px;
-  }
-  .contact-box h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px; color: white; letter-spacing: 1px; margin-bottom: 20px;
-  }
-  .contact-row { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
-  .contact-row:last-child { margin-bottom: 0; }
-  .contact-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
-  .contact-row a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 15px; }
-  .contact-row a:hover { color: white; }
-  .contact-row span { font-size: 15px; color: rgba(255,255,255,0.5); }
-
-  .receipt-note {
-    background: white; border: 1px solid var(--border); border-radius: 6px;
-    padding: 20px 24px; text-align: center;
-  }
-  .receipt-note p { font-size: 14px; color: var(--muted); }
-  .receipt-note strong { color: var(--ink); }
-
-  footer {
-    background: var(--ink); padding: 24px 48px; text-align: center;
-    font-size: 13px; color: rgba(255,255,255,0.3);
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .hero-confirm { padding: 48px 20px 40px; }
-    .container { padding: 40px 20px 60px; }
-    .contact-box { padding: 24px 20px; }
-    footer { padding: 20px; }
-  }
+:root{--page:#F3F2EF;--white:#FFFFFF;--lilac:#EEE9F5;--ink:#17151A;--ink-2:#4A4650;--muted:#7A7580;--rule:#DDD9D3;--plum:#4E3478;--plum-2:#3E2862;--display:'Outfit',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif;--m:20px}
+@media(min-width:900px){:root{--m:72px}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--body);font-size:16px;line-height:1.65;color:var(--ink);background:var(--page);-webkit-font-smoothing:antialiased}
+a{color:var(--plum)}
+.w{max-width:1440px;margin:0 auto;padding:0 var(--m)}
+.b{display:inline-flex;align-items:center;justify-content:center;height:42px;padding:0 20px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:background .15s,color .15s}
+.b-act{background:var(--plum);color:#fff}.b-act:hover{background:var(--plum-2)}
+.b-ghost{color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}.b-ghost:hover{background:var(--ink);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:76px;padding:0 var(--m);background:var(--white);border-bottom:1px solid var(--rule)}
+.logo{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.logo i{font-style:normal;opacity:.6}
+.nav-r{display:flex;gap:10px}
+@media(max-width:599px){.nav .b-ghost{display:none}}
+h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,5vw,64px);line-height:1.04;letter-spacing:-.025em}
+h1 em{font-style:normal;font-weight:400}
+main{max-width:780px;margin:0 auto;padding:64px var(--m) 96px}
+@media(min-width:900px){main{padding:96px 24px 120px}}
+.doc-meta{font-size:14px;color:var(--muted);margin:16px 0 40px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
+main h2{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:-.01em;margin:44px 0 12px}
+main p{margin-bottom:16px;color:var(--ink-2)}
+main ul{margin:0 0 16px 20px}
+main li{margin-bottom:8px;color:var(--ink-2)}
+main strong{color:var(--ink);font-weight:600}
+.highlight-box,.warning-box{background:var(--lilac);border-radius:16px;padding:22px 26px;margin:24px 0}
+.highlight-box p,.warning-box p{margin:0;color:var(--ink)}
+.doc-end{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);font-size:14px}
+/* confirmation page */
+.hero-confirm{background:var(--ink);color:#fff;text-align:center;padding:72px var(--m) 64px}
+.check-circle{width:72px;height:72px;border-radius:50%;background:var(--plum);display:flex;align-items:center;justify-content:center;margin:0 auto 28px}
+.check-circle svg{width:32px;height:32px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero-confirm h1{color:#fff;margin-bottom:16px}
+.hero-confirm p{font-size:17px;color:rgba(255,255,255,.7);max-width:540px;margin:0 auto}
+.next-steps h2{margin-top:0;margin-bottom:24px;font-weight:300;font-size:clamp(28px,3vw,40px)}
+.step-card{background:var(--white);border-radius:16px;padding:24px 26px;margin-bottom:12px;display:flex;gap:20px;align-items:flex-start}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--lilac);color:var(--plum);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:18px;flex:none}
+.step-card h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.step-card p{font-size:14px;color:var(--muted);margin:0}
+.time-badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--lilac);color:var(--plum);padding:4px 10px;border-radius:999px;margin-bottom:8px}
+.urgent-box{background:var(--lilac);border-radius:16px;padding:22px 26px;margin:40px 0}
+.urgent-box h3{font-size:15px;font-weight:600;margin-bottom:6px}
+.urgent-box p{font-size:14px;margin:0}
+.urgent-box a{font-weight:600}
+.contact-box{background:var(--ink);border-radius:16px;padding:32px 30px;margin-bottom:24px}
+.contact-box h2{color:#fff;margin:0 0 20px}
+.contact-row{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.contact-row:last-child{margin-bottom:0}
+.contact-dot{width:6px;height:6px;border-radius:50%;background:#B9A6D8;flex:none}
+.contact-row a{color:rgba(255,255,255,.85);text-decoration:none;font-size:15px}
+.contact-row span{font-size:15px;color:rgba(255,255,255,.55)}
+.receipt-note{background:var(--white);border-radius:16px;padding:20px 24px;text-align:center}
+.receipt-note p{font-size:14px;color:var(--muted);margin:0}
+footer{background:var(--ink);color:rgba(255,255,255,.6);font-size:14px}
+.ft{display:grid;gap:28px;padding:56px 0 36px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer .logo{color:#fff}
+.ft p{max-width:620px;line-height:1.7}
+.ft strong{color:rgba(255,255,255,.85);font-weight:500}
+.fls{list-style:none;display:flex;flex-wrap:wrap;gap:12px 24px}.fls a{text-decoration:none;color:rgba(255,255,255,.85)}
+.fb{padding:24px 0 48px;font-size:12px;line-height:1.6;color:rgba(255,255,255,.42)}.fb p+p{margin-top:10px}
+@media(min-width:1000px){.ft{grid-template-columns:1fr 1.4fr auto;align-items:start}}
 </style>
 </head>
 <body>
-
-<nav>
-  <a href="index.html" class="nav-logo">Fair Work Claim <span>Co.</span></a>
-</nav>
-
+<header class="nav">
+  <a href="/" class="logo">Fair Work Claim <i>Co.</i></a>
+  <div class="nav-r"><a href="/" class="b b-ghost">Back to site</a><a href="/#contact" class="b b-act">Book a call</a></div>
+</header>
 <div class="hero-confirm">
-  <div class="check-circle">✓</div>
+  <div class="check-circle"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
   <h1>Payment <em>Confirmed.</em></h1>
   <p>You're in. Your matter is now with our team. Here's exactly what happens next.</p>
 </div>
-
-<div class="container">
+<main>
 
   <div class="next-steps">
     <h2>What Happens Next</h2>
@@ -150,16 +108,16 @@
       <div>
         <span class="time-badge">Within 2 hours</span>
         <h3>A consultant will contact you</h3>
-        <p>A senior consultant from our team will call or email you to introduce themselves, confirm your details, and book your briefing call. Check your inbox — including your spam folder.</p>
+        <p>A senior consultant from our team will call or email you to introduce themselves, confirm your details, and book your briefing call. Check your inbox - including your spam folder.</p>
       </div>
     </div>
 
     <div class="step-card">
       <div class="step-num">2</div>
       <div>
-        <span class="time-badge">Briefing call — 20–30 min</span>
+        <span class="time-badge">Briefing call - 20-30 min</span>
         <h3>You tell us what happened</h3>
-        <p>We'll ask you the key questions about your situation. You don't need to prepare anything — just be ready to tell us your story. We do the rest.</p>
+        <p>We'll ask you the key questions about your situation. You don't need to prepare anything - just be ready to tell us your story. We do the rest.</p>
       </div>
     </div>
 
@@ -175,7 +133,7 @@
     <div class="step-card">
       <div class="step-num">4</div>
       <div>
-        <span class="time-badge">Commission schedules this — usually 2–6 weeks</span>
+        <span class="time-badge">Commission schedules this - usually 2-6 weeks</span>
         <h3>Conciliation conference</h3>
         <p>We prepare you thoroughly, attend with you, and represent you throughout. Most matters resolve here. We push hard for the best outcome.</p>
       </div>
@@ -184,25 +142,33 @@
 
   <div class="urgent-box">
     <h3>If your matter is urgent</h3>
-    <p>If you're approaching the 21-day deadline or need to speak with us immediately, call us directly on <a href="tel:+61494758103" style="color:var(--red);font-weight:600;">+61 (0) 494 758 103</a>. We will prioritise your matter.</p>
+    <p>If you're approaching the 21-day deadline or need to speak with us immediately, call us directly on <a href="tel:+61494758103">+61 (0) 494 758 103</a>. We will prioritise your matter.</p>
   </div>
 
   <div class="contact-box">
     <h2>Your Team's Contact Details</h2>
     <div class="contact-row"><span class="contact-dot"></span><a href="tel:+61494758103">+61 (0) 494 758 103</a></div>
     <div class="contact-row"><span class="contact-dot"></span><a href="mailto:contact@fairworkclaim.com.au">contact@fairworkclaim.com.au</a></div>
-    <div class="contact-row"><span class="contact-dot"></span><span>Mon–Fri · 8am–6pm AEST</span></div>
+    <div class="contact-row"><span class="contact-dot"></span><span>Mon-Fri · 8am-6pm AEST</span></div>
   </div>
 
   <div class="receipt-note">
     <p>A <strong>GST receipt</strong> from Stripe will be emailed to you shortly. Keep it for your records. If you have any issues with your payment, contact us directly.</p>
   </div>
 
-</div>
-
+</main>
 <footer>
-  © 2025 Fair Work Claim Co. Pty Ltd · <a href="privacy.html" style="color:rgba(255,255,255,0.35);">Privacy Policy</a> · <a href="terms.html" style="color:rgba(255,255,255,0.35);">Terms of Service</a>
+  <div class="w">
+    <div class="ft">
+      <a href="/" class="logo">Fair Work Claim <i>Co.</i></a>
+      <p>Based in <strong>Sydney, NSW</strong>, providing Fair Work Commission representation to employees across <strong>Sydney</strong>, <strong>Melbourne</strong>, <strong>Brisbane</strong>, <strong>Perth</strong>, <strong>Adelaide</strong>, <strong>Canberra</strong>, <strong>Gold Coast</strong> and all regions of Australia. Conciliations and hearings are conducted by telephone and video conference, so location is no barrier.</p>
+      <ul class="fls"><li><a href="/">Home</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="/#contact">Contact</a></li></ul>
+    </div>
+    <div class="fb">
+      <p>© 2025 Fair Work Claim Co. Pty Ltd. All rights reserved. Sydney, NSW, Australia · ABN&nbsp;59&nbsp;159&nbsp;292&nbsp;655</p>
+      <p>Fair Work Claim Co. is not a law firm and does not provide legal advice. We provide workplace relations representation services before the Fair Work Commission pursuant to the Fair Work Act 2009 (Cth). Use of this website does not create a client relationship. Always seek independent legal advice if your matter involves criminal liability or complex legal issues outside the Fair Work Commission's jurisdiction.</p>
+    </div>
+  </div>
 </footer>
-
 </body>
 </html>
