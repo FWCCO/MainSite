@@ -11,23 +11,7 @@
 <meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2617862558689602');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2617862558689602&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
 <!-- Primary SEO -->
 <title>Fair Work Commission Representation Sydney | Fair Work Claim Co.</title>
 <meta name="description" content="Expert Fair Work Commission representation for employees across Australia. Fixed flat fees. Unfair dismissal, general protections, bullying & enterprise agreements. Free consultation. Sydney-based, nationwide.">
@@ -934,8 +918,8 @@ function submitForm(){
   var src=document.getElementById('f-source');
   var params={first_name:first,last_name:last,email:email,phone:document.getElementById('f-phone').value.trim()||'Not provided',matter_type:document.getElementById('f-matter').options[document.getElementById('f-matter').selectedIndex].text,incident_date:(d&&m&&y)?d+'/'+m+'/'+y:'Not provided',message:detail,source:src.value?src.options[src.selectedIndex].text:'Not provided',booking_slot:slot};
   emailjs.send('service_r0j55pf','template_ua0ni0t',params).then(function(){return emailjs.send('service_r0j55pf','template_n9372c2',params);})
-  .then(function(){document.getElementById('form-body').style.display='none';document.getElementById('form-success').style.display='block';if(typeof gtag==='function'){gtag('event','generate_lead',{method:chosen&&chosen!=='consult'?'package_enquiry':'consultation_form'});}if(typeof fbq==='function'){fbq('track','Lead');}})  
-    .catch(function(err){btn.textContent=label;btn.disabled=false;alert('Something went wrong. Please try again or call us directly on +61 (0) 494 758 103.');console.error('EmailJS error:',err);});
+  .then(function(){document.getElementById('form-body').style.display='none';document.getElementById('form-success').style.display='block';if(typeof gtag==='function'){gtag('event','generate_lead',{method:chosen&&chosen!=='consult'?'package_enquiry':'consultation_form'});}})
+  .catch(function(err){btn.textContent=label;btn.disabled=false;alert('Something went wrong. Please try again or call us directly on +61 (0) 494 758 103.');console.error('EmailJS error:',err);});
 }
 // booking calendar: next 10 business days
 (function(){
@@ -962,7 +946,13 @@ function submitPopup(){
 }
 function markClaimed(){document.getElementById('side-tab-text').textContent='CLAIM50';document.getElementById('side-tab-inner').style.background='#1E6B4E';}
 if(sessionStorage.getItem('codeClaimed')){markClaimed();}
-if(!sessionStorage.getItem('codeClaimed')&&!sessionStorage.getItem('popupDismissed')){setTimeout(function(){if(!sessionStorage.getItem('codeClaimed')&&!sessionStorage.getItem('popupDismissed'))openPopup();},8000);}
+// popup: opens after the price has been in view for 3 seconds without a break
+(function(){var done=false,tm=null,price=document.getElementById('pkg-price');
+function blocked(){return done||sessionStorage.getItem('codeClaimed')||sessionStorage.getItem('popupDismissed');}
+function stop(){done=true;clearTimeout(tm);if(io)io.disconnect();}
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(en){en.forEach(function(e){clearTimeout(tm);if(blocked())return;if(e.isIntersecting){tm=setTimeout(function(){if(blocked())return;stop();openPopup();},3000);}});},{threshold:1}):null;
+if(io&&price)io.observe(price);
+document.querySelectorAll('.pill,#lodge-cta').forEach(function(el){el.addEventListener('click',stop);});})();
 document.addEventListener('mouseleave',function(e){if(e.clientY<10&&!sessionStorage.getItem('codeClaimed')&&!sessionStorage.getItem('popupDismissed')){openPopup();sessionStorage.setItem('popupDismissed','1');}});
 </script>
 </body>
