@@ -934,8 +934,8 @@ function submitForm(){
   var src=document.getElementById('f-source');
   var params={first_name:first,last_name:last,email:email,phone:document.getElementById('f-phone').value.trim()||'Not provided',matter_type:document.getElementById('f-matter').options[document.getElementById('f-matter').selectedIndex].text,incident_date:(d&&m&&y)?d+'/'+m+'/'+y:'Not provided',message:detail,source:src.value?src.options[src.selectedIndex].text:'Not provided',booking_slot:slot};
   emailjs.send('service_r0j55pf','template_ua0ni0t',params).then(function(){return emailjs.send('service_r0j55pf','template_n9372c2',params);})
-  .then(function(){document.getElementById('form-body').style.display='none';document.getElementById('form-success').style.display='block';if(typeof gtag==='function'){gtag('event','generate_lead',{method:chosen&&chosen!=='consult'?'package_enquiry':'consultation_form'});}})
-  .catch(function(err){btn.textContent=label;btn.disabled=false;alert('Something went wrong. Please try again or call us directly on +61 (0) 494 758 103.');console.error('EmailJS error:',err);});
+  .then(function(){document.getElementById('form-body').style.display='none';document.getElementById('form-success').style.display='block';if(typeof gtag==='function'){gtag('event','generate_lead',{method:chosen&&chosen!=='consult'?'package_enquiry':'consultation_form'});}if(typeof fbq==='function'){fbq('track','Lead');}})  
+    .catch(function(err){btn.textContent=label;btn.disabled=false;alert('Something went wrong. Please try again or call us directly on +61 (0) 494 758 103.');console.error('EmailJS error:',err);});
 }
 // booking calendar: next 10 business days
 (function(){
