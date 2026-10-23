@@ -11,23 +11,7 @@
 <meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2617862558689602');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2617862558689602&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
 <!-- Primary SEO -->
 <title>Fair Work Commission Representation Sydney | Fair Work Claim Co.</title>
 <meta name="description" content="Expert Fair Work Commission representation for employees across Australia. Fixed flat fees. Unfair dismissal, general protections, bullying & enterprise agreements. Free consultation. Sydney-based, nationwide.">
@@ -565,7 +549,6 @@ footer .logo{color:#fff}
       <li><a href="javascript:void(0)" onclick="smoothTo('pricing')">Pricing</a></li>
       <li><a href="javascript:void(0)" onclick="smoothTo('how')">How it works</a></li>
       <li><a href="javascript:void(0)" onclick="smoothTo('services')">Services</a></li>
-      <li><a href="javascript:void(0)" onclick="smoothTo('about')">About</a></li>
       <li><a href="javascript:void(0)" onclick="smoothTo('faq')">FAQ</a></li>
     </ul>
     <a href="javascript:void(0)" class="b b-white nav-book" onclick="smoothTo('enquiry-form')">Book a call</a>
@@ -596,7 +579,6 @@ footer .logo{color:#fff}
   <a href="javascript:void(0)" onclick="smoothTo('how')">How it works</a>
   <a href="javascript:void(0)" onclick="smoothTo('services')">Services</a>
   <a href="javascript:void(0)" onclick="smoothTo('testimonials')">Client stories</a>
-  <a href="javascript:void(0)" onclick="smoothTo('about')">About</a>
   <a href="javascript:void(0)" onclick="smoothTo('faq')">FAQ</a>
   <a href="javascript:void(0)" class="b b-white b-full" onclick="smoothTo('enquiry-form')">Book free consultation</a>
 </div>
@@ -721,38 +703,11 @@ footer .logo{color:#fff}
 </section>
 
 <!-- EXPERTS -->
-<section class="sec exp" id="about">
-  <div class="w exp-g">
-    <div>
-      <h2 class="h2">HR professionals. <b>Commission specialists.</b></h2>
-      <p class="quote">"Everyday workers were being priced out of Fair Work representation by law firms charging hundreds of dollars an hour for work that doesn't require a legal degree. We exist to make the Commission accessible."</p>
-      <div class="sig">
-        <svg viewBox="0 0 120 44" aria-hidden="true"><path d="M4 30c8-14 14-22 18-18s-8 22-2 20 12-26 18-24-4 22 2 22 10-16 16-14 0 12 6 12 14-10 22-12 18 2 30-2"/></svg>
-        <span><b>Michael Chen</b><small>Principal Consultant &amp; Founder</small></span>
-      </div>
-      <div class="team">
-        <div class="mem"><div class="av">MC</div><b>Michael Chen</b><small>12 years in HR and industrial relations</small></div>
-        <div class="mem"><div class="av">SR</div><b>Sarah Reynolds</b><small>Senior Workplace Relations Consultant</small></div>
-        <div class="mem"><div class="av">JP</div><b>James Park</b><small>Workplace Relations Consultant</small></div>
-      </div>
-      <!-- PLACEHOLDER credentials: mock badges, replace before going live -->
-      <div class="badges">
-        <span class="badge"><svg class="ic"><use href="#award"/></svg>AHRI member</span>
-        <span class="badge"><svg class="ic"><use href="#shield"/></svg>Certified IR practitioner</span>
-        <span class="badge"><svg class="ic"><use href="#doc"/></svg>Fair Work Act 2009 specialists</span>
-      </div>
-    </div>
-    <!-- PLACEHOLDER image: replace with a portrait of the founder -->
-    <div class="exp-img"><img src="images/hero3.webp" alt="Fair Work Claim Co. consultant" loading="lazy" width="2000" height="1335"></div>
-  </div>
-</section>
-
 <!-- FAQ -->
-<section class="sec" id="faq">
+<section class="sec" id="faq" style="padding-top:0">
   <div class="w faq-g">
     <div class="faq-l">
       <h2 class="h2">Straight answers. <b>No spin.</b></h2>
-      <div class="faces"><span>MC</span><span>SR</span><span>JP</span></div>
       <p class="ask">Still have a question? <a href="tel:+61494758103">Call 0494 758 103</a></p>
     </div>
     <div class="fq">
@@ -833,7 +788,7 @@ footer .logo{color:#fff}
       <ul class="fls"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="javascript:void(0)" onclick="smoothTo('contact')">Contact</a></li></ul>
     </div>
     <div class="fb">
-      <p>© 2025 Fair Work Claim Co. Pty Ltd. All rights reserved. Sydney, NSW, Australia · ABN&nbsp;59&nbsp;159&nbsp;292&nbsp;655</p>
+      <p>© 2025 Fair Work Claim Co. Pty Ltd. All rights reserved. Sydney, NSW, Australia</p>
       <p>Fair Work Claim Co. is not a law firm and does not provide legal advice. We provide workplace relations representation services before the Fair Work Commission pursuant to the Fair Work Act 2009 (Cth). Use of this website does not create a client relationship. Always seek independent legal advice if your matter involves criminal liability or complex legal issues outside the Fair Work Commission's jurisdiction.</p>
     </div>
   </div>
@@ -934,7 +889,8 @@ function submitForm(){
   var src=document.getElementById('f-source');
   var params={first_name:first,last_name:last,email:email,phone:document.getElementById('f-phone').value.trim()||'Not provided',matter_type:document.getElementById('f-matter').options[document.getElementById('f-matter').selectedIndex].text,incident_date:(d&&m&&y)?d+'/'+m+'/'+y:'Not provided',message:detail,source:src.value?src.options[src.selectedIndex].text:'Not provided',booking_slot:slot};
   emailjs.send('service_r0j55pf','template_ua0ni0t',params).then(function(){return emailjs.send('service_r0j55pf','template_n9372c2',params);})
-  .then(function(){document.getElementById('form-body').style.display='none';document.getElementById('form-success').style.display='block';if(typeof gtag==='function'){gtag('event','generate_lead',{method:chosen&&chosen!=='consult'?'package_enquiry':'consultation_form'});}if(typeof fbq==='function'){fbq('track','Lead');}})  .catch(function(err){btn.textContent=label;btn.disabled=false;alert('Something went wrong. Please try again or call us directly on +61 (0) 494 758 103.');console.error('EmailJS error:',err);});
+  .then(function(){document.getElementById('form-body').style.display='none';document.getElementById('form-success').style.display='block';if(typeof gtag==='function'){gtag('event','generate_lead',{method:chosen&&chosen!=='consult'?'package_enquiry':'consultation_form'});}})
+  .catch(function(err){btn.textContent=label;btn.disabled=false;alert('Something went wrong. Please try again or call us directly on +61 (0) 494 758 103.');console.error('EmailJS error:',err);});
 }
 // booking calendar: next 10 business days
 (function(){
